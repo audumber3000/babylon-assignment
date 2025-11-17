@@ -15,7 +15,7 @@ export default function RegisterPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSignUp = async (e) => {
+  const handleSignUp = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
     setLoading(true);
@@ -27,20 +27,16 @@ export default function RegisterPage() {
         password
       );
 
-      // set displayName
+      // Here we are setting display name
       if (auth.currentUser) {
         await updateProfile(auth.currentUser, { displayName: name });
       }
-
-      // optional: console for debugging
       console.log("Registered:", userCredential.user);
 
-      // redirect to login or home
+      // Here we are redirect to login or home
       router.push("/login");
     } catch (err) {
-      // firebase error objects are sometimes strings or objects; normalize
-      const message =
-        err && err.message ? err.message : String(err || "Failed to register");
+      const message =  "Failed to register";  
       setError(message);
       console.error("Sign up error:", err);
     } finally {
