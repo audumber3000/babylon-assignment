@@ -1,3 +1,7 @@
+This Project was build as a part of Babylon-Assignment where we have implemented login and signup functionality.
+
+Below readme file is by default by NextJs.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
